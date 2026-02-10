@@ -46,7 +46,7 @@ section
 {
     color: rgb(0, 0, 0);
     text-shadow: 0 0 0 5px rgba(255,255,255,0.75);
-    width: 100vw;
+    width: clamp(650px,100vw,300px);
     height: auto;
     display: flex;
     flex-direction: column;
