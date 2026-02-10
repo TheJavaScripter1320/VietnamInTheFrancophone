@@ -1,0 +1,134 @@
+h1,h2,h3,h4,h5,h6,p 
+{
+    margin: 0;
+}
+
+body 
+{
+    margin: 0;
+    background-image: url("french.png");
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    animation: changeBg;
+    animation-timeline: scroll(y);
+}
+
+header
+{
+    padding: 10px;
+    width: calc(100vw - 20px);
+    background-color: rgba(230,230,230);
+    border-bottom: 5px double;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    font-size: clamp(10px,3vw,30px);
+}
+
+footer
+{
+    position: sticky;
+    bottom: 0;
+    padding: 5px 0 5px 0;
+    width: calc(100vw - 4px);
+    background-color: rgba(230,230,230);
+    border-top: 5px double;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    font-size: clamp(10px,3vw,30px);
+}
+
+section 
+{
+    color: rgb(0, 0, 0);
+    text-shadow: 0 0 0 5px rgba(255,255,255,0.75);
+    width: 100vw;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 10px;
+    padding: 10px;
+    font-size: clamp(7px, 5vw, 17px);
+    animation: changeSection;
+    animation-timeline: view();
+}
+h2
+{
+    border-radius: 10px;
+    background-color: rgba(255,0,0,0.75);
+    color: white;
+}
+p 
+{
+    padding: 5px;
+    border-radius: 10px;
+    background-color: rgba(255,255,0,0.5);
+    color: white;
+}
+#h2
+{
+    background-color: unset;
+    color: black;
+}
+#map 
+{
+    background-image: url("vietnam.webp");
+}
+
+#hotel
+{
+    background-image: url("hotel.webp");
+}
+
+#food 
+{
+    background-image: url("cake.webp");
+}
+
+#monuments 
+{
+    background-image: url("temple.jpg");
+}
+
+#religion 
+{
+    background-image: url("oldMan.jpg");
+}
+
+#talent 
+{
+    background-image: url("singer.jpg");
+}
+
+#facts 
+{
+    background-image: url("cashew.webp");
+}
+
+@keyframes changeBg 
+{
+    to 
+    {
+        background-image: url("vietnam.png");
+    }
+}
+
+@keyframes changeSection 
+{
+    0%,100%
+    {
+        opacity: 5%;
+        transform: scale(0.75,0.75);
+    } 
+    45%,65%
+    {
+        opacity: 75%;
+        transform: scale(1,1);
+    }
+}
