@@ -29,8 +29,6 @@ header
 
 footer
 {
-    position: sticky;
-    bottom: 0;
     padding: 5px 0 5px 0;
     width: calc(100vw - 4px);
     background-color: rgba(230,230,230);
@@ -40,6 +38,23 @@ footer
     align-items: center;
     gap: 5px;
     font-size: clamp(10px,3vw,30px);
+}
+
+main 
+{
+    display: grid;
+    grid-auto-rows: auto;
+    grid-auto-columns: auto;
+    grid-template-areas: 
+    "one"
+    "two"
+    "three"
+    "four"
+    "five"
+    "six"
+    "seven";
+    justify-content: center;
+    gap: 20px;
 }
 
 section 
@@ -58,6 +73,7 @@ section
     font-size: clamp(7px, 5vw, 17px);
     animation: changeSection;
     animation-timeline: view();
+    border-radius: 10px;
 }
 h2
 {
@@ -69,8 +85,9 @@ p
 {
     padding: 5px;
     border-radius: 10px;
-    background-color: rgba(255,255,0,0.5);
+    background-color: rgba(255,255,0,0.75);
     color: white;
+    text-shadow: 0 0 10px rgba(255,255,255,0.75);
 }
 #h2
 {
@@ -80,41 +97,52 @@ p
 #map 
 {
     background-image: url("vietnam.webp");
+    grid-area: one;
 }
 
 #hotel
 {
     background-image: url("hotel.webp");
+    grid-area: two;
 }
 
 #food 
 {
     background-image: url("cake.webp");
+    grid-area: three;
 }
 
 #monuments 
 {
     background-image: url("temple.jpg");
+    grid-area: four;
 }
 
 #religion 
 {
     background-image: url("oldMan.jpg");
+    grid-area: five;
 }
 
 #talent 
 {
     background-image: url("singer.jpg");
+    grid-area: six;
 }
 
 #facts 
 {
     background-image: url("cashew.webp");
+    grid-area: seven;
 }
 
 @keyframes changeBg 
 {
-    to 
+    0%,50%,100% 
+    {
+        background-image: url("french.png");
+    }
+    25%,75%
     {
         background-image: url("vietnam.png");
     }
@@ -127,7 +155,7 @@ p
         opacity: 5%;
         transform: scale(0.75,0.75);
     } 
-    45%,65%
+    35%,65%
     {
         opacity: 75%;
         transform: scale(1,1);
