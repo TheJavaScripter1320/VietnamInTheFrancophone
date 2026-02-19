@@ -1,163 +1,91 @@
-h1,h2,h3,h4,h5,h6,p 
-{
-    margin: 0;
-}
+/* Reset margins and set base font */
+h1, h2, h3, h4, h5, h6, p { margin: 0; }
 
-body 
-{
+body {
     margin: 0;
+    font-family: sans-serif;
     background-image: url("french.png");
     background-size: cover;
     background-attachment: fixed;
     background-repeat: no-repeat;
-    animation: changeBg;
-    animation-timeline: scroll(y);
 }
 
-header
-{
-    padding: 10px;
-    width: calc(100vw - 20px);
-    background-color: rgba(230,230,230);
+header {
+    padding: 20px;
+    background-color: rgba(230, 230, 230, 0.9);
     border-bottom: 5px double;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 15px;
-    font-size: clamp(10px,3vw,30px);
 }
 
-footer
-{
-    padding: 5px 0 5px 0;
-    width: calc(100vw - 4px);
-    background-color: rgba(230,230,230);
+footer {
+    padding: 20px;
+    background-color: rgba(230, 230, 230, 0.9);
     border-top: 5px double;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 5px;
-    font-size: clamp(10px,3vw,30px);
 }
 
-main 
-{
-    display: grid;
-    grid-auto-rows: auto;
-    grid-auto-columns: auto;
-    grid-template-areas: 
-    "one"
-    "two"
-    "three"
-    "four"
-    "five"
-    "six"
-    "seven";
-    justify-content: center;
-    gap: 20px;
-}
-
-section 
-{
-    color: rgb(0, 0, 0);
-    text-shadow: 0 0 0 5px rgba(255,255,255,0.75);
-    width: 100vw;
-    height: auto;
+main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
-    gap: 10px;
-    padding: 10px;
-    font-size: clamp(20px, 1vw, 75px);
-    animation: changeSection;
-    animation-timeline: view();
-    border-radius: 10px;
+    gap: 40px;
+    padding: 40px 0;
 }
-h2
-{
+
+section {
+    width: 90%;
+    max-width: 800px;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 40px;
+    border-radius: 20px;
+    background-size: cover;
+    background-position: center;
+    box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.4); /* Darkens bg for text readability */
+    border: 2px solid white;
+}
+
+h2 {
+    padding: 10px 20px;
     border-radius: 10px;
-    background-color: rgba(255,0,0,0.75);
+    background-color: rgba(255, 0, 0, 0.85); /* Your red */
     color: white;
+    text-align: center;
 }
-p 
-{
-    padding: 5px;
+
+/* Fixed your yellow text visibility */
+p {
+    padding: 15px;
     border-radius: 10px;
-    background-color: rgba(255,255,255,1);
-    color: yellow;
-    text-shadow: 0 0 20px rgb(255,255,0);
+    background-color: rgba(255, 255, 255, 0.15); /* Light translucent box */
+    backdrop-filter: blur(5px);
+    color: yellow; /* Your original yellow */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9); /* High contrast shadow */
     font-weight: bold;
+    font-size: 1.2rem;
+    text-align: center;
 }
-#h2
-{
-    background-color: unset;
+
+#h2 {
+    background-color: transparent;
     color: black;
 }
-#map 
-{
-    background-image: url("vietnam.webp");
-    grid-area: one;
-}
 
-#hotel
-{
-    background-image: url("hotel.webp");
-    grid-area: two;
-}
-
-#food 
-{
-    background-image: url("cake.webp");
-    grid-area: three;
-}
-
-#monuments 
-{
-    background-image: url("temple.jpg");
-    grid-area: four;
-}
-
-#religion 
-{
-    background-image: url("oldMan.jpg");
-    grid-area: five;
-}
-
-#talent 
-{
-    background-image: url("singer.jpg");
-    grid-area: six;
-}
-
-#facts 
-{
-    background-image: url("cashew.webp");
-    grid-area: seven;
-}
-
-@keyframes changeBg 
-{
-    0%,50%,100% 
-    {
-        background-image: url("french.png");
-    }
-    25%,75%
-    {
-        background-image: url("vietnam.png");
-    }
-}
-
-@keyframes changeSection 
-{
-    0%,100%
-    {
-        opacity: 5%;
-        transform: scale(0.75,0.75);
-    } 
-    35%,65%
-    {
-        opacity: 75%;
-        transform: scale(1,1);
-    }
-}
+/* Background images for sections */
+#map { background-image: url("vietnam.webp"); }
+#hotel { background-image: url("hotel.webp"); }
+#food { background-image: url("cake.webp"); }
+#monuments { background-image: url("temple.jpg"); }
+#religion { background-image: url("oldMan.jpg"); }
+#talent { background-image: url("singer.jpg"); }
+#facts { background-image: url("cashew.webp"); }
