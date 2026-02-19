@@ -1,116 +1,103 @@
-/* Reset margins and set base font */
-h1, h2, h3, h4, h5, h6, p, ul, ol {
-    margin: 0;
-    padding: 0;
+@import url('https://fonts.googleapis.com');
+
+:root {
+    --neon: #00f2ff;
+    --bg: #0a0a0a;
+    --card: #161616;
 }
+
+* { box-sizing: border-box; margin: 0; padding: 0; scroll-behavior: smooth; }
 
 body {
-    margin: 0;
-    /* Use a clean, modern system font stack */
-    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-    background-color: #f4f4f4; /* Light, neutral background */
-    color: #333; /* Dark gray text for readability */
-    line-height: 1.6;
+    background-color: var(--bg);
+    color: #e0e0e0;
+    font-family: 'Inter', sans-serif;
 }
 
-/* Remove the background image from the body for a cleaner look */
-header, footer {
-    padding: 20px 5%;
-    background-color: #fff; /* White background for header/footer */
-    border-bottom: 2px solid #ddd; /* Subtle border */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-}
-
-footer {
-    border-bottom: none;
-    border-top: 2px solid #ddd;
-    margin-top: 40px;
-}
-
-main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 40px;
-    padding: 40px 5%;
-    max-width: 1200px; /* Center content on large screens */
-    margin: 0 auto;
-}
-
-section {
-    width: 100%;
-    max-width: 900px;
-    height: auto;
+header {
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 20px;
-    padding: 40px;
-    border-radius: 8px; /* Softer corners */
-    background-color: #fff; /* White card background */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Professional shadow */
-    border: none; /* Remove previous border */
-}
-
-/* Add a subtle image overlay effect without darkening the whole section for text */
-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    align-items: center;
+    background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url("french.png");
     background-size: cover;
-    background-position: center;
-    border-radius: 8px;
-    opacity: 0.1; /* Very light image background effect */
-    z-index: 0;
-}
-
-/* Ensure content is above the pseudo-element background */
-h2, p {
-    position: relative;
-    z-index: 1;
-}
-
-h2 {
-    padding: 10px 20px;
-    border-radius: 4px;
-    background-color: #0056b3; /* A professional blue instead of bright red */
-    color: white;
     text-align: center;
-    font-size: 2rem;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-}
-
-p {
-    padding: 0; /* Remove padding as it is now a content block */
-    background-color: transparent; /* Remove translucent box */
-    backdrop-filter: none; /* Remove blur effect */
-    color: #333; /* Default dark color, highly readable */
-    text-shadow: none; /* Remove shadow */
-    font-weight: normal; /* Normal font weight */
-    font-size: 1.1rem;
-    text-align: left; /* Align text left for readability */
 }
 
 header h2 {
-    background-color: transparent;
-    color: #333; /* Dark color for the main title */
-    box-shadow: none;
-    font-size: 2.5rem;
-    margin-bottom: 5px;
+    font-family: 'Syncopate', sans-serif;
+    font-size: clamp(2rem, 5vw, 4rem);
+    letter-spacing: 8px;
+    margin-bottom: 15px;
 }
 
-/* Background images for sections (applied to ::before pseudo-element) */
-#map::before { background-image: url("vietnam.webp"); }
-#hotel::before { background-image: url("hotel.webp"); }
-#food::before { background-image: url("cake.webp"); }
-#monuments::before { background-image: url("temple.jpg"); }
-#religion::before { background-image: url("oldMan.jpg"); }
-#talent::before { background-image: url("singer.jpg"); }
-#facts::before { background-image: url("cashew.webp"); }
+.scroll-btn {
+    margin-top: 40px;
+    padding: 15px 30px;
+    border: 2px solid var(--neon);
+    color: var(--neon);
+    text-decoration: none;
+    font-family: 'Syncopate', sans-serif;
+    font-size: 0.7rem;
+    transition: 0.3s;
+    box-shadow: 0 0 10px rgba(0, 242, 255, 0.2);
+}
+
+.scroll-btn:hover {
+    background: var(--neon);
+    color: black;
+    box-shadow: 0 0 30px var(--neon);
+}
+
+main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 80px 20px;
+}
+
+section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    background: var(--card);
+    border: 1px solid #222;
+    padding: 50px;
+    margin-bottom: 60px;
+    border-radius: 10px;
+    align-items: center;
+    transition: 0.4s;
+}
+
+section:hover {
+    border-color: var(--neon);
+    box-shadow: 0 0 25px rgba(0, 242, 255, 0.1);
+}
+
+.section-img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 5px;
+    border: 1px solid #333;
+}
+
+h2 {
+    color: var(--neon);
+    font-family: 'Syncopate', sans-serif;
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+}
+
+p { font-size: 1.05rem; line-height: 1.8; color: #ccc; }
+
+footer {
+    padding: 100px 20px;
+    text-align: center;
+    background: #000;
+    border-top: 1px solid #222;
+}
+
+@media (max-width: 850px) {
+    section { grid-template-columns: 1fr; }
+}
