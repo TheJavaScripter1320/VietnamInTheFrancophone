@@ -1,33 +1,34 @@
 /* Reset margins and set base font */
-h1, h2, h3, h4, h5, h6, p { margin: 0; }
+h1, h2, h3, h4, h5, h6, p, ul, ol {
+    margin: 0;
+    padding: 0;
+}
 
 body {
     margin: 0;
-    font-family: sans-serif;
-    background-image: url("french.png");
-    background-size: cover;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
+    /* Use a clean, modern system font stack */
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: #f4f4f4; /* Light, neutral background */
+    color: #333; /* Dark gray text for readability */
+    line-height: 1.6;
 }
 
-header {
-    padding: 20px;
-    background-color: rgba(230, 230, 230, 0.9);
-    border-bottom: 5px double;
+/* Remove the background image from the body for a cleaner look */
+header, footer {
+    padding: 20px 5%;
+    background-color: #fff; /* White background for header/footer */
+    border-bottom: 2px solid #ddd; /* Subtle border */
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 15px;
+    gap: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
 
 footer {
-    padding: 20px;
-    background-color: rgba(230, 230, 230, 0.9);
-    border-top: 5px double;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 5px;
+    border-bottom: none;
+    border-top: 2px solid #ddd;
+    margin-top: 40px;
 }
 
 main {
@@ -35,57 +36,81 @@ main {
     flex-direction: column;
     align-items: center;
     gap: 40px;
-    padding: 40px 0;
+    padding: 40px 5%;
+    max-width: 1200px; /* Center content on large screens */
+    margin: 0 auto;
 }
 
 section {
-    font-size: clamp(15px,2vw,100px);
-    width: 100vw;
+    width: 100%;
+    max-width: 900px;
     height: auto;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
     gap: 20px;
     padding: 40px;
-    border-radius: 20px;
+    border-radius: 8px; /* Softer corners */
+    background-color: #fff; /* White card background */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Professional shadow */
+    border: none; /* Remove previous border */
+}
+
+/* Add a subtle image overlay effect without darkening the whole section for text */
+section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     background-size: cover;
     background-position: center;
-    box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.4); /* Darkens bg for text readability */
-    border: 2px solid white;
+    border-radius: 8px;
+    opacity: 0.1; /* Very light image background effect */
+    z-index: 0;
+}
+
+/* Ensure content is above the pseudo-element background */
+h2, p {
+    position: relative;
+    z-index: 1;
 }
 
 h2 {
     padding: 10px 20px;
-    border-radius: 10px;
-    background-color: rgba(255, 0, 0, 0.85); /* Your red */
+    border-radius: 4px;
+    background-color: #0056b3; /* A professional blue instead of bright red */
     color: white;
     text-align: center;
+    font-size: 2rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
 
-/* Fixed your yellow text visibility */
 p {
-    padding: 15px;
-    border-radius: 10px;
-    background-color: rgba(255, 255, 255, 0.15); /* Light translucent box */
-    backdrop-filter: blur(5px);
-    color: black; /* Your original yellow */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9); /* High contrast shadow */
-    font-weight: bold;
-    font-size: 1.2rem;
-    text-align: center;
+    padding: 0; /* Remove padding as it is now a content block */
+    background-color: transparent; /* Remove translucent box */
+    backdrop-filter: none; /* Remove blur effect */
+    color: #333; /* Default dark color, highly readable */
+    text-shadow: none; /* Remove shadow */
+    font-weight: normal; /* Normal font weight */
+    font-size: 1.1rem;
+    text-align: left; /* Align text left for readability */
 }
 
-#h2 {
+header h2 {
     background-color: transparent;
-    color: black;
+    color: #333; /* Dark color for the main title */
+    box-shadow: none;
+    font-size: 2.5rem;
+    margin-bottom: 5px;
 }
 
-/* Background images for sections */
-#map { background-image: url("vietnam.webp"); }
-#hotel { background-image: url("hotel.webp"); }
-#food { background-image: url("cake.webp"); }
-#monuments { background-image: url("temple.jpg"); }
-#religion { background-image: url("oldMan.jpg"); }
-#talent { background-image: url("singer.jpg"); }
-#facts { background-image: url("cashew.webp"); }
+/* Background images for sections (applied to ::before pseudo-element) */
+#map::before { background-image: url("vietnam.webp"); }
+#hotel::before { background-image: url("hotel.webp"); }
+#food::before { background-image: url("cake.webp"); }
+#monuments::before { background-image: url("temple.jpg"); }
+#religion::before { background-image: url("oldMan.jpg"); }
+#talent::before { background-image: url("singer.jpg"); }
+#facts::before { background-image: url("cashew.webp"); }
